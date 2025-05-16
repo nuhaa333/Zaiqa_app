@@ -1,0 +1,56 @@
+[
+  {
+    "image": "/grilled-chicken-with-fresh-garnish.jpeg",
+    "name": "Grilled Chicken",
+    "price": 12.99,
+    "description": "Juicy grilled chicken served with seasonal vegetables."
+  },
+  {
+    "image": "/pasta-primavera.jpeg",
+    "name": "Pasta Primavera",
+    "price": 10.99,
+    "description": "Pasta tossed with fresh vegetables and olive oil."
+  },
+  {
+    "image": "/biriyani.jpeg",
+    "name": "Biriyani",
+    "price": 14.99,
+    "description": "Aromatic rice dish with spices and marinated meat."
+  },
+  {
+    "image": "/lasagna.jpeg",
+    "name": "Lasagna",
+    "price": 11.99,
+    "description": "Layers of pasta, cheese, and meat sauce baked to perfection."
+  },
+  {
+    "image": "/lamb.jpeg",
+    "name": "Lamb Chops",
+    "price": 19.99,
+    "description": "Tender lamb chops grilled and served with sauce."
+  },
+  {
+    "image": "/pizza.jpeg",
+    "name": "Margherita Pizza",
+    "price": 9.99,
+    "description": "Classic pizza topped with fresh tomatoes, mozzarella, and basil."
+  },
+  {
+    "image": "/ramen.jpeg",
+    "name": "Ramen",
+    "price": 12.99,
+    "description": "Japanese noodle soup with broth, meat, and vegetables."
+  },
+  {
+    "image": "/burger.jpeg",
+    "name": "Cheeseburger",
+    "price": 10.99,
+    "description": "Juicy beef patty with cheese, lettuce, and tomato on a bun."
+  },
+  {
+    "image": "/fish.jpeg",
+    "name": "Fish and Chips",
+    "price": 13.99,
+    "description": "Battered fish served with fries and tartar sauce."
+  }
+]

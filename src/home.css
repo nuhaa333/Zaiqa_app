@@ -1,0 +1,658 @@
+
+.home {
+    position: relative;
+    width: 100%;
+    height: auto; /* changed from 100vh */
+}
+
+.home img {
+    width: 100%;
+    height: 100vh; /* makes sure image fills viewport height */
+    max-height: 700px;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .home img {
+        height: 70vh;
+    }
+    .banner-text {
+        font-size: 1.5rem;
+        padding: 0.8rem;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .home img {
+        height: 60vh;
+    }
+    .banner-text {
+        font-size: 1.2rem;
+        padding: 0.6rem;
+        width: 95%;
+    }
+}
+
+@media (max-width: 360px) {
+    .home img {
+        height: 55vh;
+    }
+    .banner-text {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+.intro {
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    color: #222;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(to right, #f7f3a9, #f8b1b1);
+    margin-top: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .intro p {
+    margin: 1rem 0;
+    line-height: 1.5;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .intro {
+      font-size: 1.5rem;
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .intro {
+      font-size: 1.2rem;
+      padding: 1rem;
+    }
+  }
+
+h2{
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.special-cards {
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    background: #fefefe;
+    text-align: center;
+}
+.special-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+.hot {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+}
+
+.special-cards .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    max-width: 300px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+}
+
+.special-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.special-cards .card video {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.special-cards .card p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.explore {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    background: linear-gradient(to right, #fe2b8a, #fff59d);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .explore a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .explore:hover {
+    background: linear-gradient(to right, #fff59d, #ff7eb9);
+  }
+  
+  /* === Responsive Media Queries === */
+  @media (max-width: 768px) {
+    .special-cards-wrapper {
+      gap: 1.5rem;
+    }
+  
+    .special-cards h2 {
+      font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .special-cards {
+      padding: 2rem 1rem;
+    }
+  
+    .special-cards h2 {
+      font-size: 1.5rem;
+    }
+  
+    .special-cards .card {
+      padding: 0.8rem;
+    }
+  
+    .special-cards .card p {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .special-cards .card p {
+      font-size: 0.9rem;
+    }
+  
+    .explore {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+/* Style the arrow containers */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none; /* Hide the default arrow */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  font-size: 30px;      /* Arrow size */
+  color: #f173ac;       /* Arrow color */
+  font-weight: bold;    /* Make it bold */
+  background: none;     /* Remove background */
+  border: none;         /* Ensure no borders */
+  cursor: pointer;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Position arrows */
+.swiper-button-prev {
+  left: 8px;
+}
+
+.swiper-button-next {
+  right: 8px;
+}
+/* Home Banner Swiper Styles 
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home img {
+  width: 100%;
+  height: 100vh; /* makes sure image fills viewport height 
+  max-height: 700px;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.banner-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner-text p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Intro Section 
+.intro {
+  background: linear-gradient(to right, #d4145a, #f0ef83);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-top: 3rem;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 1rem;
+}
+
+/* Hot Picks Title 
+.hot {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fc466b;
+}
+
+/* Special Cards Section 
+.special-cards {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.special-cards-wrapper {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card p {
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Explore Button 
+.explore {
+  background: linear-gradient(to right, #fc466b, #3f5efb);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.explore:hover {
+  background: linear-gradient(to right, #3f5efb, #fc466b);
+}
+
+.explore a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.explore i {
+  margin-left: 0.5rem;
+}*/
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 2rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.info,
+.social {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+}
+
+.info h1,
+.social h2 {
+  font-size: 1.8rem;
+  color: #818541;
+  margin-bottom: 1rem;
+}
+
+.info p,
+.social ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.social ul {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social a {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.social a:hover {
+  transform: scale(1.2);
+}
+
+.map {
+  flex: 1;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* Increase height */
+  height: 500px; 
+}
+
+#location {
+  width: 100%;
+  height: 100%;
+  max-height: 500px; /* Ensure max-height matches the map height */
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map {
+    max-width: 90%;
+    height: 400px; /* Adjust the height for smaller screens */
+    max-height: 400px; /* Ensure the map doesn't exceed this height */
+    margin-top: 1rem;
+  }
+
+  .info h1,
+  .social h2 {
+    font-size: 1.5rem;
+  }
+
+  .social ul {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .contact {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center; /* Center the contact content */
+  }
+
+  .info,
+  .social {
+    flex: 1;
+    max-width: 600px;
+    max-height: 600px;
+    margin-bottom: 2rem;
+  }
+
+  .map {
+    order: 1;
+    width: 500px;
+    height: 500px; /* Increased height */
+    margin-left: 2rem;
+    margin-right: 0; /* Ensures no margin on the right */
+    display: block;
+    margin-top: 0; /* Remove any extra margin at the top */
+    margin-bottom: 0; /* Optional: Remove extra bottom margin */
+    margin-left: auto; /* Center the map horizontally */
+    margin-right: auto; /* Center the map horizontally */
+  }
+
+  /* Ensure that social and info sections do not overlap the map */
+  .info {
+    margin-right: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*contact section
+.contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.info,
+.social {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 600px;
+}
+
+.info h1,
+.social h2 {
+  font-size: 1.8rem;
+  color: #818541;
+  margin-bottom: 1rem;
+}
+
+.info p,
+.social ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.social ul {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social a {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.social a:hover {
+  transform: scale(1.2);
+}
+
+.map {
+  flex: 1;
+  max-width: 700px;
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 700px; 
+}
+
+#location {
+  width: 100%;
+  height: 100%;
+  max-height: 700px; 
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Adjustments 
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the contact content 
+  }
+
+  .map {
+    max-width: 90%;
+    height: 400px; /* Adjust the height for smaller screens
+    max-height: 400px; /* Ensure the map doesn't exceed this height 
+    margin-top: 1rem;
+  }
+
+  .info h1,
+  .social h2 {
+    font-size: 1.5rem;
+  }
+
+  .social ul {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; /* Center the contact content 
+  }
+
+  .info,
+  .social {
+    flex: 1;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+
+  .map {
+    order: 1;
+    width: 500px;
+    height: 500px; 
+    margin-left: 2rem;
+    margin-right: 0; /* Ensures no margin on the right 
+    display: block;
+    margin-top: 0; /* Remove any extra margin at the top 
+    margin-bottom: 0; /* Optional: Remove extra bottom margin 
+    margin-left: auto; /* Center the map horizontally 
+    margin-right: auto; /* Center the map horizontally 
+  }
+
+  /* Ensure that social and info sections do not overlap the map 
+  .info {
+    margin-right: 2rem; /* Add margin to the right 
+  }
+}*/
