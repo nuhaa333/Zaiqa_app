@@ -59,7 +59,7 @@ const ItemCard = ({ item, onAdd }) => {
           {item.description || 'No description provided.'}
         </Typography>
         <Typography variant="body1" fontWeight="medium" sx={{ mt: 1 }}>
-          ${item.price?.toFixed(2) || 'N/A'}
+          ${item.price?.toFixed(2) || '$5.99'}
         </Typography>
       </CardContent>
       <Box sx={{ p: 2, pt: 0, textAlign: 'center' }}>

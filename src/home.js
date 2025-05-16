@@ -7,12 +7,18 @@ import lasagna from './assets/lasagna.mp4';
 import './home.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const goToMenu = () => {
+    navigate('/menu');
+  };
   return (
     <div>
       <Swiper
@@ -83,8 +89,10 @@ const Home = () => {
             <p>Juicy lamb, kissed by flame and dusted with roasted pistachios — a harmony of texture and taste</p>
           </div>
         </div>
-        <button className="explore">
-          <a href="/menu">Explore our Menu <i className="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+      <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+        <button className="explore-btn" onClick={goToMenu}>
+          Explore Our Menu
         </button>
       </div>
     </div>
