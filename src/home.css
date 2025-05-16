@@ -155,7 +155,7 @@ h2{
     line-height: 1.5;
 }
 
-.explore {
+.explore-btn {
     margin-top: 2rem;
     padding: 0.8rem 2rem;
     font-size: 1rem;
@@ -172,7 +172,7 @@ h2{
     font-weight: bold;
   }
   
-  .explore:hover {
+  .explore-btn:hover {
     background: linear-gradient(to right, #fff59d, #ff7eb9);
   }
   
