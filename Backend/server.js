@@ -146,13 +146,13 @@ app.get("/auth/google",
 
 app.get("/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "/dashboard",
-    failureRedirect: "/login"
+    successRedirect: "https://zaiqa-app-1.onrender.com/home",
+    failureRedirect: "https://zaiqa-app-1.onrender.com/login-failed"
   })
 );
 
-app.get("/dashboard", (req, res) => res.send("Login successful!"));
-app.get("/login", (req, res) => res.send("Login failed"));
+app.get("/home", (req, res) => res.send("Login successful!"));
+app.get("/login-failed", (req, res) => res.send("Login failed!"));
 // ----------------------
 // ✅ Server Start
 // ----------------------
