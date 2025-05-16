@@ -1,5 +1,5 @@
 // server.js
-
+require('dotenv').config();
 const express = require('express');
 const https = require('https');
 const path = require('path');
@@ -7,7 +7,6 @@ const fs = require('fs');
 const cors = require('cors');
 const passport = require('passport');
 const session = require('express-session');
-require('dotenv').config();
 require('./auth'); // <-- Ensure auth.js is properly configured
 
 const app = express();
