@@ -19,9 +19,11 @@ const [snackbarMessage, setSnackbarMessage] = useState('');
 const [currentPage, setCurrentPage] = useState(1);
 const itemsPerPage = 6;
 
+const API_BASE = process.env.REACT_APP_API_URL;
+
 useEffect(() => {
   setLoading(true);
-  fetch(`http://localhost:5000/api/${category}`)
+  fetch(`${API_BASE}/api/${category}`)
     .then(res => res.json())
     .then(data => {
       console.log("Fetched data:", data);

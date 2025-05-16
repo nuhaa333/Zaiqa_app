@@ -146,7 +146,7 @@ app.get('/logout', (req, res) => {
 // ✅ Server Start
 // ----------------------
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running at ${PORT}`);
 });
 
 
