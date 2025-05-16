@@ -118,29 +118,41 @@ app.post('/reserve', (req, res) => {
 // 🔐 Google Auth Routes
 // ----------------------
 
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
+//app.get('/auth/google',
+// passport.authenticate('google', { scope: ['profile', 'email'] })
+//);
+
+//app.get('/auth/google/callback',
+//  passport.authenticate('google', {
+ //   successRedirect: `${FRONTEND_URL}/login`,
+ //   failureRedirect: FRONTEND_URL
+//  })
+//);
+
+// 👤 Get Authenticated User
+//app.get('/user', (req, res) => {
+//  res.send(req.user || null);
+//});
+
+// 🔓 Logout
+//app.get('/logout', (req, res) => {
+// req.logout(() => {
+//    res.redirect(`${FRONTEND_URL}/login`);
+//  });
+//});
+app.get("/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-app.get('/auth/google/callback',
-  passport.authenticate('google', {
-    successRedirect: `${FRONTEND_URL}/login`,
-    failureRedirect: FRONTEND_URL
+app.get("/auth/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/dashboard",
+    failureRedirect: "/login"
   })
 );
 
-// 👤 Get Authenticated User
-app.get('/user', (req, res) => {
-  res.send(req.user || null);
-});
-
-// 🔓 Logout
-app.get('/logout', (req, res) => {
-  req.logout(() => {
-    res.redirect(`${FRONTEND_URL}/login`);
-  });
-});
-
+app.get("/dashboard", (req, res) => res.send("Login successful!"));
+app.get("/login", (req, res) => res.send("Login failed"));
 // ----------------------
 // ✅ Server Start
 // ----------------------
