@@ -154,8 +154,26 @@ h2{
     color: #333;
     line-height: 1.5;
 }
-
 .explore-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background: linear-gradient(to right, #fe2b8a, #fff59d);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: #000;               /* add this to set text color */
+  font-weight: bold;         /* add this to bold the text */
+   display: inline-block;
+  text-align: center;
+}
+
+.explore-btn:hover {
+  background: linear-gradient(to right, #fff59d, #ff7eb9);
+}
+
+/*.explore-btn {
     margin-top: 2rem;
     padding: 0.8rem 2rem;
     font-size: 1rem;
@@ -175,7 +193,8 @@ h2{
   .explore-btn:hover {
     background: linear-gradient(to right, #fff59d, #ff7eb9);
   }
-  
+  */
+
   /* === Responsive Media Queries === */
   @media (max-width: 768px) {
     .special-cards-wrapper {
