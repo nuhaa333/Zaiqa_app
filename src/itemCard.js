@@ -32,8 +32,7 @@ const ItemCard = ({ item, onAdd }) => {
           boxShadow: 6,
         },
         border: '2px solid transparent',
-        backgroundImage:
-          'linear-gradient(white, white), linear-gradient(to right, #d4145a, #fbb03b, #f0ef83)',
+        backgroundImage: 'linear-gradient(to right, rgba(26, 84, 103, 0.5), rgba(169, 169, 169, 0.3))',
         backgroundOrigin: 'border-box',
         backgroundClip: 'content-box, border-box',
         minHeight: 400, // Set a minimum height to keep all cards the same size
@@ -69,12 +68,15 @@ const ItemCard = ({ item, onAdd }) => {
           startIcon={<AddShoppingCartIcon />}
           onClick={handleAdd}
           sx={{
-            background: 'linear-gradient(to right, #d4145a, #fbb03b)',
+            backgroundColor: 'rgba(173, 216, 230, 0.3)', // light glass blue
+            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
             color: '#fff',
             fontWeight: 'bold',
             borderRadius: 2,
             '&:hover': {
-              background: 'linear-gradient(to right, #c3134f, #eaa22f)',
+              backgroundColor: 'rgba(169, 169, 169, 0.3)',
             },
           }}
         >

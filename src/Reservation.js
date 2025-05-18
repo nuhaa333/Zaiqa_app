@@ -33,7 +33,7 @@ const Reservation = () => {
 
       if (response.ok) {
         alert(result.message || "Reservation successful!");
-        // Reset form if needed
+        // Reset form 
         setFormData({
           name: "",
           email: "",

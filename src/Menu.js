@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import ItemCard from './itemCard';
 import CategoryBox from './categoryBox';
 import {
-
 Container, TextField, Grid, Typography, Box,
 CircularProgress, Snackbar, Alert, Pagination
 } from '@mui/material';
@@ -60,7 +59,11 @@ return (
     {/* Gradient Header */}
     <Box
       sx={{
-        background: 'linear-gradient(to right, #d4145a, #fbb03b, #f0ef83)',
+        background: 'rgba(200, 230, 255, 0.2)',      // glassy blue
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',          // Safari support
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.2)',
         py: 3,
         borderRadius: 2,
         mb: 4,

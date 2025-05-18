@@ -146,7 +146,7 @@ app.get("/auth/google",
 
 app.get("/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "https://zaiqa-app-iafe.onrender.com/menu",
+    successRedirect: "https://zaiqa-app-iafe.onrender.com",
     failureRedirect: "https://zaiqa-app-1.onrender.com/login-failed"
   })
 );

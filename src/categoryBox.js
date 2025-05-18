@@ -1,12 +1,32 @@
 import React from 'react';
+import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
+import FreeBreakfastIcon from '@mui/icons-material/FreeBreakfast';
+import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 import { Button, ButtonGroup } from '@mui/material';
 
 const CategoryBox = ({ setCategory }) => (
-  <ButtonGroup variant="contained" color="success">
-    <Button onClick={() => setCategory('MainCourse')}>Main course</Button>
-    <Button onClick={() => setCategory('pizza')}>Pizza</Button>
-    <Button onClick={() => setCategory('hot-coffee')}>Hot Coffee</Button>
-    <Button onClick={() => setCategory('iced-coffee')}>Iced Coffee</Button>
+  <ButtonGroup
+  variant="contained"
+  sx={{
+    backgroundColor: 'transparent',
+    '& .MuiButton-root': {
+      backgroundColor: 'rgba(173, 216, 230, 0.25)', // glassy blue
+      color: '#fff',
+      backdropFilter: 'blur(8px)',
+      WebkitBackdropFilter: 'blur(8px)',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      transition: 'all 0.3s ease',
+      '&:hover': {
+        backgroundColor: 'rgba(200, 230, 250, 0.35)', // brighter on hover
+      },
+    },
+  }}
+>
+    <Button onClick={() => setCategory('MainCourse')} startIcon={<DinnerDiningIcon />}>Main course</Button>
+    <Button onClick={() => setCategory('pizza')} startIcon={<LocalPizzaIcon />}>Pizza</Button>
+    <Button onClick={() => setCategory('hot-coffee')} startIcon={<FreeBreakfastIcon />}>Hot Coffee</Button>
+    <Button onClick={() => setCategory('iced-coffee')} startIcon={<AcUnitIcon />}>Iced Coffee</Button>
   </ButtonGroup>
 );
 

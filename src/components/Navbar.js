@@ -9,9 +9,17 @@ import {
   ListItem,
   ListItemText,
   Box,
+  Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import logoImage from '../assets/logo.png';
+import HomeIcon from "@mui/icons-material/Home";
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+import LoginIcon from "@mui/icons-material/Login";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import EventSeatIcon from "@mui/icons-material/EventSeat";
+
+//import logoImage from "../assets/logo.png";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -21,20 +29,36 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { label: "Home", path: "/" },
-    { label: "Menu", path: "/menu" },
-    { label: "Contact", path: "/contact" },
-    { label: "Login", path: "/login" },
-    { label: "Cart", path: "/cart" },
-    { label: "Reservation", path: "/reservation" },
+    { label: "Home", path: "/", icon: <HomeIcon /> },
+    { label: "Menu", path: "/menu", icon: <RestaurantMenuIcon /> },
+    { label: "Contact", path: "/contact", icon: <ContactMailIcon /> },
+    { label: "Login", path: "/login", icon: <LoginIcon /> },
+    { label: "Cart", path: "/cart", icon: <ShoppingCartIcon /> },
+    { label: "Reservation", path: "/reservation", icon: <EventSeatIcon /> },
   ];
 
   return (
     <>
-      <AppBar position="static" sx={{ background: 'linear-gradient(to right, #d4145a, #fbb03b)' }}>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <AppBar position="static" sx={{ background: "#2D2D2D" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box display="flex" alignItems="center">
-            <img src={logoImage} alt="zaiqa" style={{ height: 70, width: 100 }} />
+            <Typography
+              variant="h5"
+              sx={{
+                color: "rgba(255, 255, 255, 0.9)",
+                textShadow: '0 0 10px rgba(255, 255, 255, 0.2)', // frosted glow
+                fontWeight: "bold",
+                px: 2,
+                py: 1,
+                background: "rgba(11, 61, 145, 0.3)",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)", // for Safari support
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                borderRadius: 2,
+              }}
+            >
+              Zaiqa
+            </Typography>
           </Box>
 
           <IconButton
@@ -42,16 +66,16 @@ const Navbar = () => {
             color="inherit"
             aria-label="menu"
             onClick={toggleDrawer(true)}
-            sx={{ display: { xs: 'block', sm: 'block', md: 'none' } }}
+            sx={{ display: { xs: "block", sm: "block", md: "none" } }}
           >
             <MenuIcon />
           </IconButton>
 
           <Box
             sx={{
-              display: { xs: 'none', md: 'flex' },
+              display: { xs: "none", md: "flex" },
               gap: 4, // Increased spacing between links
-              alignItems: 'center',
+              alignItems: "center",
             }}
           >
             {navLinks.map(({ label, path }) => (
@@ -60,9 +84,9 @@ const Navbar = () => {
                 to={path}
                 className="nav-link"
                 style={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  fontWeight: '500',
+                  color: "white",
+                  textDecoration: "none",
+                  fontWeight: "500",
                 }}
               >
                 {label}
@@ -79,7 +103,7 @@ const Navbar = () => {
         onClose={toggleDrawer(false)}
         PaperProps={{
           sx: {
-            background: 'linear-gradient(to right, #fbb03b,rgb(249, 117, 167))', // Light gradient
+            background: "linear-gradient(to right, #fbb03b,rgb(249, 117, 167))", // Light gradient
           },
         }}
       >
@@ -90,7 +114,7 @@ const Navbar = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <List sx={{ py: 2 }}>
-            {navLinks.map(({ label, path }) => (
+            {navLinks.map(({ label, path, icon }) => (
               <ListItem
                 button
                 key={label}
@@ -98,9 +122,10 @@ const Navbar = () => {
                 to={path}
                 sx={{
                   py: 2, // vertical padding to increase space between items
-                  color: '#333',
+                  color: "#333",
                 }}
               >
+                <Box sx={{ marginRight: 2 }}>{icon}</Box>
                 <ListItemText primary={label} />
               </ListItem>
             ))}
