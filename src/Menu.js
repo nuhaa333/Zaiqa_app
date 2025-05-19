@@ -93,8 +93,31 @@ return (
         variant="outlined"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        sx={{ width: '100%', maxWidth: 400 }}
-      />
+        sx={{ width: '100%',
+           maxWidth: 400,
+          input: {
+        color: '#E0E0E0', // Light grey text
+      },
+      label: {
+        color: '#90caf9', // Light blue label
+      },
+      '& label.Mui-focused': {
+        color: '#64b5f6', // Brighter blue on focus
+      },
+      '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+          borderColor: '#555', // Grey border
+        },
+        '&:hover fieldset': {
+          borderColor: '#90caf9', // Light blue on hover
+        },
+        '&.Mui-focused fieldset': {
+          borderColor: '#64b5f6', // Brighter blue on focus
+        },
+        backgroundColor: '#1c1c1c', // Dark background for input
+      },
+    }}
+  />
     </Box>
 
     {/* Content */}

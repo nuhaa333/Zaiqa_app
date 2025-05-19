@@ -59,8 +59,7 @@ const Cart = () => {
                   borderRadius: 3,
                   border: '2px solid transparent',
                   backgroundClip: 'padding-box, border-box',
-                  backgroundImage:
-                    'linear-gradient(#fff, #fff), linear-gradient(to right, #d4145a, #fbb03b, #f0ef83)',
+                  backgroundImage: 'linear-gradient(to right, rgba(26, 84, 103, 0.5), rgba(169, 169, 169, 0.3))',
                   backgroundOrigin: 'padding-box, border-box',
                 }}
               >
@@ -120,9 +119,12 @@ const Cart = () => {
               textAlign: 'center',
               p: 3,
               borderRadius: 2,
-              boxShadow: 3,
-              background: 'linear-gradient(to right, #d4145a, #fbb03b, #f0ef83)',
-              color: '#fff',
+              backgroundColor: 'rgba(173, 216, 230, 0.3)', // light glass blue
+              boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+             color: '#fff',
+              
               fontWeight: 'bold',
             }}
           >

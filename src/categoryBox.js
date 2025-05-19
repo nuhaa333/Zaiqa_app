@@ -23,10 +23,10 @@ const CategoryBox = ({ setCategory }) => (
     },
   }}
 >
-    <Button onClick={() => setCategory('MainCourse')} startIcon={<DinnerDiningIcon />}>Main course</Button>
-    <Button onClick={() => setCategory('pizza')} startIcon={<LocalPizzaIcon />}>Pizza</Button>
-    <Button onClick={() => setCategory('hot-coffee')} startIcon={<FreeBreakfastIcon />}>Hot Coffee</Button>
-    <Button onClick={() => setCategory('iced-coffee')} startIcon={<AcUnitIcon />}>Iced Coffee</Button>
+    <Button onClick={() => setCategory('MainCourse')} startIcon={<DinnerDiningIcon sx={{ color: '#98ff98'}}/>}>Main course</Button>
+    <Button onClick={() => setCategory('pizza')} startIcon={<LocalPizzaIcon sx={{ color: '#D2691E'}} />}>Pizza</Button>
+    <Button onClick={() => setCategory('hot-coffee')} startIcon={<FreeBreakfastIcon sx={{ color: '#C3B091'}}/>}>Hot Coffee</Button>
+    <Button onClick={() => setCategory('iced-coffee')} startIcon={<AcUnitIcon sx={{ color: '#4682B4'}}/>}>Iced Coffee</Button>
   </ButtonGroup>
 );
 
