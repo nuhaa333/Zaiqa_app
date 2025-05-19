@@ -14,7 +14,11 @@ const Cart = () => {
     <Container sx={{ mt: 5, px: { xs: 1, sm: 3, md: 5 } }}>
       <Box
         sx={{
-          background: 'linear-gradient(to right, #d4145a, #fbb03b, #f0ef83)',
+          backgroundColor: 'rgba(173, 216, 230, 0.3)', // light glass blue
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          color: '#fff',
           py: 3,
           borderRadius: 2,
           mb: 4,

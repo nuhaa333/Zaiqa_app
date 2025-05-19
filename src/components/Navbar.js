@@ -103,7 +103,8 @@ const Navbar = () => {
         onClose={toggleDrawer(false)}
         PaperProps={{
           sx: {
-            background: "linear-gradient(to right, #fbb03b,rgb(249, 117, 167))", // Light gradient
+            backgroundColor: 'rgba(30, 60, 90, 0.5)'  // dark bluish tone with moderate opacity
+
           },
         }}
       >
@@ -122,7 +123,7 @@ const Navbar = () => {
                 to={path}
                 sx={{
                   py: 2, // vertical padding to increase space between items
-                  color: "#333",
+                  color: "#fff",
                 }}
               >
                 <Box sx={{ marginRight: 2 }}>{icon}</Box>

@@ -1,4 +1,137 @@
-body{
+/* reslog.css */
+
+body {
+  background-color: #0d1117;
+  color: #f0f6fc;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.reservation-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 30px 0 10px;
+  color: #ffffff;
+}
+
+.reservation-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#reserve,
+.reservation-form {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#reserve-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.reservation-form {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(2, 12, 27, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reservation-form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.reservation-form input[type="text"],
+.reservation-form input[type="email"],
+.reservation-form input[type="tel"],
+.reservation-form input[type="date"],
+.reservation-form input[type="time"],
+.reservation-form input[type="number"],
+.reservation-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(240, 248, 255, 0.07); /* glass grey */
+  color: #ffffff;
+  font-size: 1rem;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.reservation-form input:focus,
+.reservation-form textarea:focus {
+  background: rgba(240, 248, 255, 0.15);
+}
+
+.reservation-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.reservation-form input[type="submit"] {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(0, 123, 255, 0.2); /* glassy blue */
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.15);
+}
+
+.reservation-form input[type="submit"]:hover {
+  background: rgba(0, 123, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .reservation-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  #reserve,
+  .reservation-form {
+    width: 100%;
+  }
+
+  #reserve-image {
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+
+
+/*body{
     background-color: #f7f7f7;
     color: #333;
 }
@@ -24,11 +157,11 @@ body{
     overflow: hidden;
     flex-wrap: wrap;
     /* Remove this line */
-    /* height: 700px; */
+    /* height: 700px; 
 }
 
 
-/* Left Side - Image */
+/* Left Side - Image 
 #reserve {
     flex: 1.5;
     display: flex;
@@ -40,7 +173,7 @@ body{
     object-fit: cover;
 }
 
-/* Right Side - Form */
+/* Right Side - Form 
 form {
     flex: 1.3;
     padding: 40px;
@@ -86,7 +219,7 @@ form input[type="submit"]:hover {
     background: linear-gradient(to right, #3f5efb, #fc466b);
 }
 
-/* Tablet: Stack vertically */
+/* Tablet: Stack vertically 
 @media (max-width: 768px) {
     .reservation-container {
       flex-direction: column;
@@ -102,7 +235,7 @@ form input[type="submit"]:hover {
     }
   }
   
-  /* Mobile: Slightly smaller font and padding */
+  /* Mobile: Slightly smaller font and padding 
   @media (max-width: 480px) {
     .reservation-title {
       font-size: 28px;
@@ -119,7 +252,7 @@ form input[type="submit"]:hover {
       padding: 10px;
     }
   }
-/* Extra small screens: 320px to 400px */
+/* Extra small screens: 320px to 400px 
 @media (max-width: 400px) {
     .reservation-title {
       font-size: 24px;
@@ -207,4 +340,4 @@ form input[type="submit"]:hover {
       padding: 10px;
       width: 100%;
     }
-  }
+  }*/
