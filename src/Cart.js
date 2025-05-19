@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useCart } from "./cartContext";
 import {
   Container,
@@ -18,14 +17,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 const Cart = () => {
   const { cart, removeFromCart, totalPrice, totalQuantity, clearCart } = useCart();
-
-  const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (!user) {
-    alert("Please login to access the menu");
-    navigate("/login");
-    return null;
-  }
 
   const handleOrderNow = async () => {
     const user = JSON.parse(localStorage.getItem("user"));

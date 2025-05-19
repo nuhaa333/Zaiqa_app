@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ItemCard from './itemCard';
 import CategoryBox from './categoryBox';
 import {
@@ -18,16 +17,6 @@ const [snackbarOpen, setSnackbarOpen] = useState(false);
 const [snackbarMessage, setSnackbarMessage] = useState('');
 const [currentPage, setCurrentPage] = useState(1);
 const itemsPerPage = 6;
-
-const user = JSON.parse(localStorage.getItem("user"));
-const navigate = useNavigate();
-
-useEffect(() => {
-  if (!user) {
-    alert("Please login to access the menu");
-    navigate("/login");
-  }
-}, [user, navigate]);
 
 
 const API_BASE = process.env.REACT_APP_API_URL;

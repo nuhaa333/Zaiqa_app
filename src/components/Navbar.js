@@ -34,7 +34,7 @@ const Navbar = () => {
     { label: "Menu", path: "/menu", icon: <RestaurantMenuIcon /> },
     { label: "Contact", path: "/contact", icon: <ContactMailIcon /> },
     { label: "Login", path: "/login", icon: <LoginIcon /> },
-    { label: "Profile", path: "/profile", icon: <AccountCircleIcon /> },
+    //{ label: "Profile", path: "/profile", icon: <AccountCircleIcon /> },
     { label: "Cart", path: "/cart", icon: <ShoppingCartIcon /> },
     { label: "Reservation", path: "/reservation", icon: <EventSeatIcon /> },
   ];
