@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
+import {useNavigate} from "react-router-dom";
 import './menu.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const loginWithGoogle = () => {
-    window.location.href = 'https://zaiqa-app-1.onrender.com/auth/google/callback';
+    window.location.href = 'https://zaiqa-app-1.onrender.com/auth/google';
   };
 
   const loginWithEmail = async () => {
-    const res = await fetch('https://zaiqa-app-1.onrender.com', {
+    const res = await fetch('https://zaiqa-app-1.onrender.com/api/auth/login', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -19,7 +21,9 @@ const Login = () => {
 
     const data = await res.json();
     if (res.ok) {
-      window.location.href = '/';
+      localStorage.setItem("user", JSON.stringify(data.user));
+      alert("Login successfull");
+      navigate("/menu")
     } else {
       alert(data.message);
     }

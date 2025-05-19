@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./reslog.css"; // Your CSS styles
 import hotel from './assets/reserve.jpg';
 
 const Reservation = () => {
+
+const user = JSON.parse(localStorage.getItem("user"));
+const navigate = useNavigate();
+
+useEffect(() => {
+  if (!user) {
+    alert("Please login to access the menu");
+    navigate("/login");
+  }
+}, [user, navigate]);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",

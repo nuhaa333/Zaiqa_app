@@ -8,6 +8,7 @@ import Contact from './Contact';
 import Login from './Login';
 import './App.css';
 import { CartProvider } from './cartContext';
+import Profile from './Profile';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="reservation" element={<Reservation />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="login" element={<Login />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Route>

@@ -36,7 +36,7 @@ app.use(cors({
 }));
 
 app.use(session({
-  secret: 'secret_key',
+  secret: process.env.SESSION_SECRET || 'fallback_secret',
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -146,10 +146,24 @@ app.get("/auth/google",
 
 app.get("/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "https://zaiqa-app-iafe.onrender.com",
-    failureRedirect: "https://zaiqa-app-1.onrender.com/login-failed"
+    successRedirect: `${FRONTEND_URL}`,
+   failureRedirect: `${FRONTEND_URL}/login-failed`
+
+    //successRedirect: "https://zaiqa-app-iafe.onrender.com",
+    //failureRedirect: "https://zaiqa-app-1.onrender.com/login-failed"
   })
 );
+
+app.post("/api/auth/login", (req, res) => {
+  const { email, password } = req.body;
+
+  if (email === "nuhaaaisha592@gmail.com" && password === "nuha30") {
+    req.session.user = { id: "1", email };
+    return res.json({ success: true, user: req.session.user });
+  } else {
+    return res.status(401).json({ message: "Invalid credentials" });
+  }
+});
 
 // ----------------------
 // ✅ Server Start

@@ -18,6 +18,7 @@ import ContactMailIcon from "@mui/icons-material/ContactMail";
 import LoginIcon from "@mui/icons-material/Login";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 //import logoImage from "../assets/logo.png";
 
@@ -33,6 +34,7 @@ const Navbar = () => {
     { label: "Menu", path: "/menu", icon: <RestaurantMenuIcon /> },
     { label: "Contact", path: "/contact", icon: <ContactMailIcon /> },
     { label: "Login", path: "/login", icon: <LoginIcon /> },
+    { label: "Profile", path: "/profile", icon: <AccountCircleIcon /> },
     { label: "Cart", path: "/cart", icon: <ShoppingCartIcon /> },
     { label: "Reservation", path: "/reservation", icon: <EventSeatIcon /> },
   ];

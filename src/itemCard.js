@@ -68,7 +68,7 @@ const ItemCard = ({ item, onAdd }) => {
           startIcon={<AddShoppingCartIcon />}
           onClick={handleAdd}
           sx={{
-            backgroundColor: 'rgba(173, 216, 230, 0.3)', // light glass blue
+            backgroundColor: 'rgba(26, 84, 103, 0.5)', // light glass blue
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
             backdropFilter: 'blur(8px)',
             WebkitBackdropFilter: 'blur(8px)',
