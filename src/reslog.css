@@ -15,7 +15,8 @@
 .reservation-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  /*align-items: flex-start;*/
+  align-items: stretch;
   gap: 2rem;
   flex-wrap: wrap;
   padding: 2rem;
@@ -30,14 +31,18 @@
 
 #reserve-image {
   width: 100%;
-  max-width: 400px;
+ /* max-width: 400px;*/
+  height: 100%;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+   display: block;
 }
 
 .reservation-form {
-  flex: 1;
+  /*flex: 1;*/
+  flex: 1 1 400px;
   min-width: 300px;
   display: flex;
   flex-direction: column;
@@ -46,6 +51,7 @@
   padding: 2rem;
   border-radius: 20px;
   color: white;
+  order: 1;
 }
 
 .reservation-form label {
@@ -77,6 +83,13 @@
   background: #1c75d8;
 }
 
+#reserve {
+  order: 2;
+  flex: 1 1 400px;  /* Grow and shrink, base width 400px */
+  display: flex; /* To stretch the img inside */
+  align-items: center; /* Center vertically if needed */
+}
+
 @media screen and (max-width: 768px) {
   .reservation-container {
     flex-direction: column;
@@ -84,11 +97,24 @@
   }
 
   #reserve-image {
-    max-width: 90%;
+   max-width: 100%;
+  height: auto;
   }
 
   .reservation-form {
     width: 80%;
+  }
+
+  #reserve {
+   order: 1;
+  flex: unset;
+   width: 90%;
+  }
+  
+  .reservation-form {
+   order: 2;
+   width: 80%;
+   flex: unset;
   }
 }
 
