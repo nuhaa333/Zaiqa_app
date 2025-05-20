@@ -1,9 +1,29 @@
 require('dotenv').config();
 const passport = require('passport');
 console.log('CLIENT_ID:', process.env.CLIENT_ID);
-console.log('CLIENT_SECRET:', process.env.CLIENT_SECRET);
+//console.log('CLIENT_SECRET:', process.env.CLIENT_SECRET);
 console.log('redirect URI:',`${process.env.BACKEND_URL}/auth/google/callback`);
+const express = require('express');
+const router = express.Router();
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+const mockUser = {
+  email: "test@example.com",
+  password: "test123", // NEVER store plain text passwords in real apps
+  name: "Test User"
+};
+
+router.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  if (email === mockUser.email && password === mockUser.password) {
+    return res.status(200).json({ user: { name: mockUser.name, email: mockUser.email } });
+  } else {
+    return res.status(401).json({ message: "Invalid credentials" });
+  }
+});
+
+module.exports = router;
 
 const callbackURL = process.env.NODE_ENV === 'production'
   ? 'https://zaiqa-app-1.onrender.com/auth/google/callback'

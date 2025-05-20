@@ -140,6 +140,11 @@ app.post('/reserve', (req, res) => {
 //    res.redirect(`${FRONTEND_URL}/login`);
 //  });
 //});
+
+app.get('/user', (req, res) => {
+  res.json(req.session.user || null);
+});
+
 app.get("/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
@@ -164,6 +169,8 @@ app.post("/api/auth/login", (req, res) => {
     return res.status(401).json({ message: "Invalid credentials" });
   }
 });
+
+app.use('/api/auth', authRoutes);
 
 // ----------------------
 // ✅ Server Start
