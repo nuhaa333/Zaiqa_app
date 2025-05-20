@@ -8,7 +8,7 @@ import Contact from './Contact';
 import Login from './Login';
 import './App.css';
 import { CartProvider } from './cartContext';
-import Profile from './Profile';
+//import Profile from './Profile';
 
 function App() {
   return (
