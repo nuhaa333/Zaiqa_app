@@ -50,7 +50,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.json());
-
+app.use(cors({
+  origin: 'https://zaiqa-app-iafe.onrender.com'  // your React app URL
+}));
 // ----------------------
 // 🍕 API ROUTES
 // ----------------------
@@ -109,7 +111,7 @@ app.get('/api/maincourse', (req, res) => {
 });
 
 // 📅 Reservation endpoint
-app.post('/reserve', (req, res) => {
+app.post('/reservation', (req, res) => {
   console.log("Reservation request received:", req.body);
   res.json({ message: "Reservation received!" });
 });
