@@ -54,9 +54,7 @@ const Login = () => {
         <button onClick={loginWithGoogle} className="google-button">
           Continue with Google
         </button>
-        <p className="login-footer">
-          Don't have an account? <a href="/register" className="login-link">Register</a>
-        </p>
+  
       </div>
     </div>
   );

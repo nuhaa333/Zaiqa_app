@@ -120,29 +120,6 @@ app.post('/reservation', (req, res) => {
 // 🔐 Google Auth Routes
 // ----------------------
 
-//app.get('/auth/google',
-// passport.authenticate('google', { scope: ['profile', 'email'] })
-//);
-
-//app.get('/auth/google/callback',
-//  passport.authenticate('google', {
- //   successRedirect: `${FRONTEND_URL}/login`,
- //   failureRedirect: FRONTEND_URL
-//  })
-//);
-
-// 👤 Get Authenticated User
-//app.get('/user', (req, res) => {
-//  res.send(req.user || null);
-//});
-
-// 🔓 Logout
-//app.get('/logout', (req, res) => {
-// req.logout(() => {
-//    res.redirect(`${FRONTEND_URL}/login`);
-//  });
-//});
-
 app.get('/user', (req, res) => {
   res.json(req.session.user || null);
 });
@@ -156,8 +133,6 @@ app.get("/auth/google/callback",
     successRedirect: `${FRONTEND_URL}`,
    failureRedirect: `${FRONTEND_URL}/login-failed`
 
-    //successRedirect: "https://zaiqa-app-iafe.onrender.com",
-    //failureRedirect: "https://zaiqa-app-1.onrender.com/login-failed"
   })
 );
 

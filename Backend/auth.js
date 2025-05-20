@@ -9,7 +9,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const mockUser = {
   email: "test@example.com",
-  password: "test123", // NEVER store plain text passwords in real apps
+  password: "test123", 
   name: "Test User"
 };
 

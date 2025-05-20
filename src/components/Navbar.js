@@ -18,11 +18,15 @@ import ContactMailIcon from "@mui/icons-material/ContactMail";
 import LoginIcon from "@mui/icons-material/Login";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
+import Badge from "@mui/material/Badge";
+import { useCart } from "../cartContext";
+
 //import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 //import logoImage from "../assets/logo.png";
 
 const Navbar = () => {
+  const { totalQuantity } = useCart();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = (open) => () => {
@@ -48,7 +52,7 @@ const Navbar = () => {
               variant="h5"
               sx={{
                 color: "rgba(255, 255, 255, 0.9)",
-                textShadow: '0 0 10px rgba(255, 255, 255, 0.2)', // frosted glow
+                textShadow: "0 0 10px rgba(255, 255, 255, 0.2)", // frosted glow
                 fontWeight: "bold",
                 px: 2,
                 py: 1,
@@ -80,18 +84,30 @@ const Navbar = () => {
               alignItems: "center",
             }}
           >
-            {navLinks.map(({ label, path }) => (
+            {navLinks.map(({ label, path, icon }) => (
               <NavLink
                 key={label}
                 to={path}
                 className="nav-link"
-                style={{
-                  color: "white",
+                style={({ isActive }) => ({
+                  color: isActive ? "#00bcd4" : "white",
                   textDecoration: "none",
-                  fontWeight: "500",
-                }}
+                  fontWeight: isActive ? "600" : "500",
+                  borderBottom: isActive ? "2px solid #00bcd4" : "none",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.3rem",
+                })}
               >
-                {label}
+                {label === "Cart" ? (
+                  <Badge badgeContent={totalQuantity} color="error" showZero>
+                    {icon}
+                  </Badge>
+                ) : (
+                  <>
+                    {label}
+                  </>
+                )}
               </NavLink>
             ))}
           </Box>
@@ -105,8 +121,7 @@ const Navbar = () => {
         onClose={toggleDrawer(false)}
         PaperProps={{
           sx: {
-            backgroundColor: 'rgba(30, 60, 90, 0.5)'  // dark bluish tone with moderate opacity
-
+            backgroundColor: "rgba(30, 60, 90, 0.5)", // dark bluish tone with moderate opacity
           },
         }}
       >
@@ -123,12 +138,23 @@ const Navbar = () => {
                 key={label}
                 component={NavLink}
                 to={path}
-                sx={{
-                  py: 2, // vertical padding to increase space between items
+                sx={({ isActive }) => ({
+                  py: 2,
                   color: "#fff",
-                }}
+                  backgroundColor: isActive
+                    ? "rgba(255, 255, 255, 0.1)"
+                    : "transparent",
+                })}
               >
-                <Box sx={{ marginRight: 2 }}>{icon}</Box>
+                <Box sx={{ marginRight: 2 }}>
+                  {label === "Cart" ? (
+                    <Badge badgeContent={totalQuantity} color="error" showZero>
+                      {icon}
+                    </Badge>
+                  ) : (
+                    icon
+                  )}
+                </Box>
                 <ListItemText primary={label} />
               </ListItem>
             ))}
